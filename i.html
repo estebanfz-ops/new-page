@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kina Studio | Precision B2B Confection</title>
+    <meta name="description" content="A B2B clothing confection studio in Colombia. Precision-made garments with genuine artisan soul for global fashion labels.">
+    
+    <!-- Fonts: Cormorant Garamond for heritage/atelier feel, Inter for spec-sheet precision -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Backgrounds
+                        linen: '#F7F5F0',       // Main warm off-white background
+                        concrete: '#EAE8E3',    // Secondary background, raw industrial feel
+                        // Typography
+                        ink: '#1C2026',         // Deep charcoal, softer than pure black
+                        graphite: '#4A4F55',    // Secondary text
+                        // Accents (Colombian Material Landscape)
+                        indigo: '#2A3441',      // Heritage dye tradition
+                        ochre: '#C48C5E',       // Raw cotton bales, warmth
+                        blush: '#E2C2B3',       // Handwoven thread, subtle
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // For precision, specs, UI
+                        serif: ['Cormorant Garamond', 'serif'], // For heritage, emotion, headings
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '30': '7.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base styling */
+        body {
+            background-color: #F7F5F0; /* bg-linen */
+            color: #1C2026; /* text-ink */
+            overflow-x: hidden;
+        }
+
+        /* The 'Sewing Machine Rhythm' Animation */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            /* Cubic bezier mimicking a precise mechanical movement settling softly */
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered delays for list items/grids */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Tactile, spec-sheet aesthetics */
+        .stitch-border {
+            border: 1px dashed #E2C2B3; /* blush color */
+        }
+        
+        .solid-border {
+            border: 1px solid #EAE8E3; /* concrete color */
+        }
+
+        /* Subtle image treatment to feel more like raw material */
+        .material-img {
+            filter: contrast(0.95) saturate(0.85);
+            transition: filter 0.5s ease;
+        }
+        .material-img:hover {
+            filter: contrast(1) saturate(1);
+        }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F7F5F0; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #EAE8E3; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D9C5B2; 
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-ochre selection:text-linen font-sans">
+
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-linen/80 border-b border-concrete/50" id="main-header">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+            <!-- Brand -->
+            <div class="flex items-center gap-2">
+                <span class="font-serif text-2xl tracking-wide text-ink font-medium">Kina</span>
+                <span class="text-xs uppercase tracking-[0.2em] text-graphite mt-1 hidden sm:block">Studio Medellín</span>
+            </div>
+            
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex gap-10 text-xs uppercase tracking-widest font-medium text-graphite">
+                <a href="#atelier" class="hover:text-ochre transition-colors">The Atelier</a>
+                <a href="#capabilities" class="hover:text-ochre transition-colors">Capabilities</a>
+                <a href="#materials" class="hover:text-ochre transition-colors">Sourcing</a>
+            </nav>
+            
+            <!-- CTA Button -->
+            <div>
+                <a href="#partner" class="text-xs uppercase tracking-widest font-medium text-linen bg-ink px-6 py-3 rounded-sm hover:bg-indigo transition-colors flex items-center gap-2">
+                    <span>Partner Inquiries</span>
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center">
+                
+                <!-- Hero Text -->
+                <div class="md:col-span-7 z-10 reveal-element">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-[1px] bg-ochre"></div>
+                        <span class="text-xs uppercase tracking-[0.2em] text-ochre font-medium">B2B Confection & Manufacturing</span>
+                    </div>
+                    <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-ink mb-8">
+                        Global precision.<br>
+                        <span class="italic font-light text-graphite">Colombian artisan soul.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-graphite font-light max-w-xl leading-relaxed mb-10">
+                        We are the production partner for discerning fashion labels. Rigorous specification meets generational craft in our Medellín-based studio.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#capabilities" class="inline-flex justify-center items-center px-8 py-4 bg-transparent border border-ink text-ink text-sm uppercase tracking-widest hover:bg-ink hover:text-linen transition-colors rounded-sm">
+                            Explore Capabilities
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Imagery (Simulated Textures via Placeholders) -->
+                <div class="md:col-span-5 relative mt-12 md:mt-0 reveal-element delay-200">
+                    <div class="aspect-[3/4] relative z-10">
+                        <!-- Simulated image of folded raw linen/cotton -->
+                        <img src="https://placehold.co/600x800/EAE8E3/4A4F55?text=Textile+Stacks\nStudio+Floor" alt="Folded textiles in studio" class="w-full h-full object-cover rounded-sm material-img shadow-lg shadow-concrete/50">
+                    </div>
+                    <!-- Decorative offset block representing a pattern piece -->
+                    <div class="absolute -bottom-8 -left-8 w-2/3 aspect-square bg-blush/20 border border-blush z-0 hidden md:block"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="atelier" class="py-24 md:py-32 bg-concrete relative overflow-hidden">
+            <!-- Subtle background texture line -->
+            <div class="absolute left-1/2 top-0 bottom-0 w-[1px] bg-linen/50 -translate-x-1/2 hidden md:block"></div>
+            
+            <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+                <span class="text-xs uppercase tracking-[0.2em] text-graphite font-medium block mb-8 reveal-element">Our Philosophy</span>
+                <h2 class="font-serif text-3xl md:text-5xl leading-tight text-ink mb-10 reveal-element delay-100">
+                    Where the hum of precision machinery coexists with handwritten pattern notes pinned to linen boards.
+                </h2>
+                <p class="text-graphite md:text-lg font-light leading-relaxed reveal-element delay-200 max-w-2xl mx-auto">
+                    Based in Medellín—a city with a profound textile heritage—Kina Studio bridges the gap between artisan warmth and industrial reliability. We operate our factory floor like a high-end atelier: uncluttered, purposeful, and profoundly human. Every seam is a testament to our dual commitment: exacting standards for international buyers, and deep respect for the hands that sew.
+                </p>
+            </div>
+        </section>
+
+        <section id="capabilities" class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal-element">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.2em] text-ochre font-medium block mb-4">Studio Disciplines</span>
+                    <h2 class="font-serif text-4xl md:text-5xl text-ink">Production Capabilities</h2>
+                </div>
+                <p class="text-graphite font-light text-sm max-w-sm md:text-right">
+                    Structured processes designed for scale, executed with the meticulous care of a sample room.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 solid-border bg-linen">
+                <!-- Capability 1 -->
+                <div class="p-10 border-b md:border-b-0 md:border-r border-concrete hover:bg-concrete/30 transition-colors reveal-element delay-100 group">
+                    <div class="text-xs text-graphite mb-8 font-mono">SEC. 01</div>
+                    <h3 class="font-serif text-2xl text-ink mb-4 group-hover:text-ochre transition-colors">Technical Development</h3>
+                    <p class="text-graphite font-light text-sm leading-relaxed mb-8">
+                        From raw concept to production-ready tech packs. We digitize patterns, grade with surgical precision, and iterate samples until the fit aligns perfectly with your brand architecture.
+                    </p>
+                    <ul class="text-xs text-graphite space-y-2 border-t border-concrete pt-4">
+                        <li class="flex items-center gap-2"><div class="w-1 h-1 rounded-full bg-ochre"></div> Pattern Drafting & Digitization</li>
+                        <li class="flex items-center gap-2"><div class="w-1 h-1 rounded-full bg-ochre"></div> Size Grading</li>
+                        <li class="flex items-center gap-2"><div class="w-1 h-1 rounded-full bg-ochre"></div> Prototype & Fit Sampling</li>
+                    </ul>
+                </div>
+
+                <!-- Capability 2 -->
+                <div class="p-10 border-b md:border-b-0 md:border-r border-concrete hover:bg-concrete/30 transition-colors reveal-element delay-200 group">
+                    <div class="text-xs text-graphite mb-8 font-mono">SEC. 02</div>
+                    <h3 class="font-serif text-2xl text-ink mb-4 group-hover:text-indigo transition-colors">Cut & Sew Manufacturing</h3>
+                    <p class="text-graphite font-light text-sm leading-relaxed mb-8">
+                        Scalable production runs that do not compromise on finish. Our floor is optimized for mid-to-large volume orders, maintaining strict tolerances on every batch.
+                    </p>
+                    <ul class="text-xs text-graphite space-y-2 border-t border-concrete pt-4">
+                        <li class="flex items-center gap-2"><div class="w-1 h-1 rounded-full bg-indigo"></div> Precision Cutting</li>
+                        <li class="flex items-center gap-2"><div class="w-1 h-1 rounded-full bg-indigo"></div> Specialized Machine Lines</li>
+                        <li class="flex items-center gap-2"><div class="w-1 h-1 rounded-full bg-indigo"></div> Hand-finished Detailing</li>
+                    </ul>
+                </div>
+
+                <!-- Capability 3 -->
+                <div class="p-10 hover:bg-concrete/30 transition-colors reveal-element delay-300 group">
+                    <div class="text-xs text-graphite mb-8 font-mono">SEC. 03</div>
+                    <h3 class="font-serif text-2xl text-ink mb-4 group-hover:text-blush transition-colors">Quality Assurance</h3>
+                    <p class="text-graphite font-light text-sm leading-relaxed mb-8">
+                        A rigorous, multi-stage inspection protocol. We view QC not as a final step, but as a continuous thread running through the entire manufacturing lifecycle.
+                    </p>
+                    <ul class="text-xs text-graphite space-y-2 border-t border-concrete pt-4">
+                        <li class="flex items-center gap-2"><div class="w-1 h-1 rounded-full bg-blush"></div> Inline Process Checks</li>
+                        <li class="flex items-center gap-2"><div class="w-1 h-1 rounded-full bg-blush"></div> Final Garment Inspection</li>
+                        <li class="flex items-center gap-2"><div class="w-1 h-1 rounded-full bg-blush"></div> Export-ready Packaging</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="materials" class="py-24 md:py-32 bg-indigo text-linen overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    
+                    <div class="order-2 lg:order-1 relative reveal-element">
+                        <!-- Simulated indigo dye/fabric close-up -->
+                        <div class="aspect-square bg-ink rounded-sm overflow-hidden relative">
+                            <img src="https://placehold.co/800x800/1A202C/EAE8E3?text=Indigo+Dye\nProcess" alt="Indigo dyed fabric" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700">
+                            <!-- Overlay element mimicking a physical material swatch -->
+                            <div class="absolute bottom-6 right-6 w-32 h-40 bg-ochre p-4 shadow-xl flex flex-col justify-end">
+                                <span class="font-mono text-[10px] text-linen/70">SWATCH 04</span>
+                                <span class="text-sm font-medium text-linen mt-1">Raw Cotton</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-1 lg:order-2 reveal-element delay-100">
+                        <span class="text-xs uppercase tracking-[0.2em] text-blush font-medium block mb-6">Material Landscape</span>
+                        <h2 class="font-serif text-4xl md:text-5xl leading-tight mb-8">
+                            Grounded in the story of craft. Sourced with global responsibility.
+                        </h2>
+                        <p class="font-light text-linen/80 text-lg leading-relaxed mb-8">
+                            We leverage Colombia's strategic position and rich textile history to source premium materials—from native raw cottons to technical synthetics. 
+                        </p>
+                        <p class="font-light text-linen/80 text-sm leading-relaxed mb-10">
+                            Our procurement networks are transparent, prioritizing suppliers who share our commitment to environmental stewardship and ethical labor practices. You are not just buying manufacturing capacity; you are securing a responsible supply chain.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-8 border-t border-linen/20 pt-8">
+                            <div>
+                                <span class="block text-3xl font-serif text-blush mb-2">100%</span>
+                                <span class="text-xs uppercase tracking-wider text-linen/60">Traceable Inputs</span>
+                            </div>
+                            <div>
+                                <span class="block text-3xl font-serif text-ochre mb-2">Local</span>
+                                <span class="text-xs uppercase tracking-wider text-linen/60">Sourcing Network</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="partner" class="py-32 px-6 md:px-12 max-w-4xl mx-auto text-center">
+            <div class="reveal-element">
+                <svg class="w-8 h-8 mx-auto mb-8 text-ochre" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4v16m8-8H4"></path>
+                </svg>
+                <h2 class="font-serif text-4xl md:text-5xl text-ink mb-6">
+                    A partnership built for the long term.
+                </h2>
+                <p class="text-graphite font-light md:text-lg leading-relaxed mb-12 max-w-2xl mx-auto">
+                    We reserve our capacity for brands seeking a reliable, high-quality extension of their own team. Let us discuss your production roadmap, lead times, and how Kina Studio can elevate your next collection.
+                </p>
+                
+                <div class="stitch-border p-8 md:p-12 bg-white relative">
+                    <!-- Corner accents mimicking pattern markings -->
+                    <div class="absolute top-0 left-0 w-3 h-3 border-t border-l border-ink"></div>
+                    <div class="absolute top-0 right-0 w-3 h-3 border-t border-r border-ink"></div>
+                    <div class="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-ink"></div>
+                    <div class="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-ink"></div>
+
+                    <form class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs uppercase tracking-widest text-graphite font-medium">Brand / Company Name</label>
+                            <input type="text" class="border-b border-concrete pb-2 bg-transparent focus:outline-none focus:border-ink transition-colors font-light text-sm" placeholder="e.g. Studio Nord">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs uppercase tracking-widest text-graphite font-medium">Your Name & Role</label>
+                            <input type="text" class="border-b border-concrete pb-2 bg-transparent focus:outline-none focus:border-ink transition-colors font-light text-sm" placeholder="Sourcing Director">
+                        </div>
+                        <div class="flex flex-col gap-2 md:col-span-2 mt-4">
+                            <label class="text-xs uppercase tracking-widest text-graphite font-medium">Production Inquiry Details</label>
+                            <textarea rows="3" class="border-b border-concrete pb-2 bg-transparent focus:outline-none focus:border-ink transition-colors font-light text-sm resize-none" placeholder="Estimated volumes, target lead times, or specific material requirements..."></textarea>
+                        </div>
+                        <div class="md:col-span-2 mt-6 flex justify-center">
+                            <button type="button" class="px-10 py-4 bg-ink text-linen text-sm uppercase tracking-widest hover:bg-ochre transition-colors duration-300 w-full sm:w-auto">
+                                Submit Inquiry
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-ink text-linen/70 py-16 border-t border-indigo">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm font-light">
+                
+                <div class="md:col-span-1">
+                    <span class="font-serif text-2xl tracking-wide text-linen block mb-4">Kina</span>
+                    <p class="leading-relaxed text-xs">
+                        Precision B2B clothing confection.<br>
+                        Grounded in Colombian craft.<br>
+                        Engineered for global standards.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest text-linen font-medium mb-6">Headquarters</h4>
+                    <address class="not-italic text-xs space-y-1">
+                        Cra. 48 #26-85, Industrial Hub<br>
+                        Medellín, Antioquia<br>
+                        Colombia (CO)
+                    </address>
+                </div>
+
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest text-linen font-medium mb-6">Contact</h4>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="#" class="hover:text-ochre transition-colors">partners@kinastudio.co</a></li>
+                        <li><a href="#" class="hover:text-ochre transition-colors">+57 (300) 555-0192</a></li>
+                        <li>Mon-Fri, 08:00 - 17:00 COT</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest text-linen font-medium mb-6">Legal & Specs</h4>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="#" class="hover:text-ochre transition-colors">Production Terms (PDF)</a></li>
+                        <li><a href="#" class="hover:text-ochre transition-colors">Sustainability Charter</a></li>
+                        <li><a href="#" class="hover:text-ochre transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-6 md:px-12 mt-16 pt-8 border-t border-indigo/50 flex flex-col md:flex-row justify-between items-center text-xs text-linen/40">
+                <p>&copy; 2026 Kina Studio Confecciones S.A.S. All rights reserved.</p>
+                <p class="mt-2 md:mt-0 font-mono text-[10px]">VER 1.0.4 // MED</p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup Intersection Observer for the "sewing machine" rhythmic reveal animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -10% 0px', // Trigger slightly before the element comes fully into view
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add class to trigger CSS transition
+                        entry.target.classList.add('is-visible');
+                        // Stop observing once revealed
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Select all elements with the reveal class and observe them
+            const revealElements = document.querySelectorAll('.reveal-element');
+            revealElements.forEach(el => observer.observe(el));
+
+            // Header behavior: slightly minimize padding on scroll to maximize screen real estate
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-sm');
+                    header.firstElementChild.classList.remove('h-20');
+                    header.firstElementChild.classList.add('h-16');
+                } else {
+                    header.classList.remove('shadow-sm');
+                    header.firstElementChild.classList.remove('h-16');
+                    header.firstElementChild.classList.add('h-20');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
